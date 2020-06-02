@@ -1,0 +1,63 @@
+.section-weather {
+  // position: relative;
+  padding: 4rem 0;
+  // perspective: 150rem;
+  // -moz-perspective: 150rem;
+}
+
+// .weather {
+//   background-image: linear-gradient(to bottom, rgba($color-primary-light, 0.7), rgba($color-primary-dark, 0.9));
+//   // ,url('../img/default-bg-1.jpg'); 
+//   background-size: cover;
+//   background-position: top;
+// }
+
+
+
+.card {
+  //FUNCTIONALITY
+  perspective: 150rem;
+  -moz-perspective: 150rem;
+  position: relative;
+  height: 52rem;
+
+
+  &__side {
+    height: 52rem;
+    transition: all 0.9s ease;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    backface-visibility: hidden;
+    border-radius: 3px;
+    overflow: hidden;
+    box-shadow: 0 1.5rem 4rem rgba($color-black, 0.5);
+
+    &-default {
+      background-image: linear-gradient(to bottom right, 
+        rgba($color-secondary-light, 0.2),
+        rgba($color-secondary-dark, 0.5)),
+        url('../../img/default-bg-3.jpg');
+        background-size: cover;
+        background-position: top;
+
+    }
+
+    &-results {
+      transform: rotateX(180deg);
+
+    }
+  }
+
+  // &:hover &__side-default {
+  //   transform: rotateX(-180deg);
+  // }
+
+  // &:hover &__side-results {
+  //   transform: rotateX(0);
+  // }
+
+}
+
+

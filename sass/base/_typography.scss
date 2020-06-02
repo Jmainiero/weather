@@ -1,0 +1,28 @@
+body {
+  font-family: 'Lato';
+
+}
+
+.results {
+  text-align: center;
+  color:$color-white;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+
+  &--location {
+    font-size: 2rem;
+    // font-weight: 400;
+  }
+  &--currentTempt {
+    font-size: 5rem;
+    font-weight: 700;
+    
+  }
+}
+
+.details__status {
+  text-align: center;
+  font-size: 1.7rem;
+}
