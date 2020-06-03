@@ -4,7 +4,7 @@ const resultsSide = document.querySelector('.card__side-results');
 // console.log(defaultSide);
 // console.log(resultsSide);
 
-//ROTATE THE APP TO SHOW RESULTS
+//ROTATE THE APP TO SHOW RESULTS - FOR TESTING
 // defaultSide.style.transform = 'rotateX(-180deg)';
 // resultsSide.style.transform = 'rotateX(0)';
 
@@ -23,12 +23,24 @@ document.querySelector(".form__weather").addEventListener("submit", function (ev
 });
 
 
+document.querySelector('a.search-location').addEventListener('click', function (evt) {
+  defaultSide.style.transform = 'rotateX(0)';
+  resultsSide.style.transform = 'rotateX(180deg)';
+  let zip = document.querySelector('.form__weather--input').value = '';
+
+});
+
+
 const fetchData = (zip) => {
   const apiKey = 'e07fdcbfcc218eb6cfbdeb7fec313fab';
-  const url = `api.openweathermap.org/data/2.5/weather?zip=${zip},us&appid=${apiKey}`;
+  const url = `http://api.openweathermap.org/data/2.5/weather?zip=${zip},us&units=imperial&appid=${apiKey}`;
   console.log(url);
 
-  fetch('http://api.openweathermap.org/data/2.5/weather?zip=10306&appid=e07fdcbfcc218eb6cfbdeb7fec313fab')
+  fetch(url)
     .then(response => response.json())
-    .then(data => console.log(data));
+    .then(data => {
+      console.log(data);
+      document.querySelector('.results--cTemp').innerHTML = data.main.temp;
+      document.querySelector('.results--loc').innerHTML = data.name + ", " + data.sys.country;
+    });
 };

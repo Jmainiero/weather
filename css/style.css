@@ -75,7 +75,7 @@ body {
 
 .results {
   text-align: center;
-  color: #000; }
+  color: #fff; }
   .results__side {
     position: absolute;
     top: 50%;
@@ -85,9 +85,15 @@ body {
   .results--loc {
     font-size: 2rem;
     padding: 3rem 0; }
+    @media (max-width: 37.5em) {
+      .results--loc {
+        font-size: 1.5rem; } }
   .results--cTemp {
     font-size: 5rem;
     font-weight: 700; }
+    @media (max-width: 37.5em) {
+      .results--cTemp {
+        font-size: 4rem; } }
   .results_cta {
     position: absolute;
     margin: 0 auto;
@@ -96,11 +102,14 @@ body {
     right: 0;
     padding: 2.5rem;
     transition: all .3s; }
+    @media (max-width: 37.5em) {
+      .results_cta {
+        padding: 4rem; } }
     .results_cta-link {
       font-size: 1.5rem; }
       .results_cta-link, .results_cta-link:visited, .results_cta-link:link {
         text-decoration: none;
-        color: #000; }
+        color: #fff; }
     .results_cta:hover {
       transform: scale(1.1); }
     .results_cta:active, .results_cta:focus {
@@ -138,6 +147,7 @@ body {
         color: #999; }
 
 .section-weather {
+  max-width: 650px;
   padding: 4rem 0; }
 
 .card {
@@ -161,4 +171,8 @@ body {
       background-size: cover;
       background-position: top; }
     .card__side-results {
-      transform: rotateX(180deg); }
+      transform: rotateX(180deg);
+      background-image: linear-gradient(to bottom right, rgba(0, 144, 158, 0.5), rgba(20, 40, 80, 0.5)), url("../../img/result-header-1.jpg");
+      background-size: cover;
+      background-position: bottom;
+      clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%); }

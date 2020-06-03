@@ -5,7 +5,7 @@ body {
 
 .results {
   text-align: center;
-  color:$color-black;
+  color:$color-white;
  
   &__side {
     @include absCenter;
@@ -15,11 +15,18 @@ body {
   &--loc {
     font-size: 2rem;
     padding: 3rem 0;
-    // font-weight: 400;
+
+    @include respond(phone){
+      font-size: 1.5rem;
+    }
   }
   &--cTemp {
     font-size: 5rem;
     font-weight: 700;
+
+    @include respond(phone){
+      font-size: 4rem;
+    }
   }
 
 
@@ -32,6 +39,10 @@ body {
   padding: 2.5rem;
   transition: all .3s;
 
+  @include respond(phone){
+    padding: 4rem;
+  }
+
   &-link {
     font-size: 1.5rem;
 
@@ -39,7 +50,7 @@ body {
     &:visited,
     &:link{
       text-decoration: none;
-      color: $color-black;
+      color: $color-white;
     }
   }
 
