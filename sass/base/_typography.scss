@@ -5,24 +5,66 @@ body {
 
 .results {
   text-align: center;
-  color:$color-white;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
+  color:$color-black;
+ 
+  &__side {
+    @include absCenter;
+    border-radius: 3px;
+  }
 
-  &--location {
+  &--loc {
     font-size: 2rem;
+    padding: 3rem 0;
     // font-weight: 400;
   }
-  &--currentTempt {
+  &--cTemp {
     font-size: 5rem;
     font-weight: 700;
-    
   }
+
+
+&_cta {
+  position: absolute;
+  margin: 0 auto;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 2.5rem;
+  transition: all .3s;
+
+  &-link {
+    font-size: 1.5rem;
+
+    &,
+    &:visited,
+    &:link{
+      text-decoration: none;
+      color: $color-black;
+    }
+  }
+
+    &:hover {
+      transform: scale(1.1)
+    }
+
+    
+    &:active,
+    &:focus {
+      outline: none;
+      transform: translateY(-5px);
+    }
+}
+  
+  // &--details {
+  //   background-color: $color-grey-light-1;
+  //   height: 17rem;
+  //   padding: 2rem 0;
+  //   display: table;
+  // }
+
+  // &--high-low {
+  //   display: table-column;
+  //   font-size: 1.7rem;
+  // }
 }
 
-.details__status {
-  text-align: center;
-  font-size: 1.7rem;
-}

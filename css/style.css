@@ -75,20 +75,37 @@ body {
 
 .results {
   text-align: center;
-  color: #fff;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%); }
-  .results--location {
-    font-size: 2rem; }
-  .results--currentTempt {
+  color: #000; }
+  .results__side {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 3px; }
+  .results--loc {
+    font-size: 2rem;
+    padding: 3rem 0; }
+  .results--cTemp {
     font-size: 5rem;
     font-weight: 700; }
-
-.details__status {
-  text-align: center;
-  font-size: 1.7rem; }
+  .results_cta {
+    position: absolute;
+    margin: 0 auto;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 2.5rem;
+    transition: all .3s; }
+    .results_cta-link {
+      font-size: 1.5rem; }
+      .results_cta-link, .results_cta-link:visited, .results_cta-link:link {
+        text-decoration: none;
+        color: #000; }
+    .results_cta:hover {
+      transform: scale(1.1); }
+    .results_cta:active, .results_cta:focus {
+      outline: none;
+      transform: translateY(-5px); }
 
 .form {
   position: absolute;
