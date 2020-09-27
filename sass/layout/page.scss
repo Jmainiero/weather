@@ -1,6 +1,6 @@
 .section-weather {
-  max-width: 650px;
-  padding: 4rem 0;
+  max-width: 414px;
+  margin: 0 auto;
 }
 
 
@@ -13,7 +13,7 @@
 
 
   &__side {
-    height: 52rem;
+    height: 75rem;
     transition: all 0.9s ease;
     position: absolute;
     top: 0;
@@ -26,27 +26,60 @@
 
     &-default {
       background-image: linear-gradient(to bottom right, 
-        rgba($color-secondary-light, 0.2),
-        rgba($color-secondary-dark, 0.5)),
-        url('../../img/default-bg-3.jpg');
+        rgba(#75b4e3, 0.2),
+        rgba(#2b235a, 0.5)),
+        url('../../img/default-bg-1.jpg');
         background-size: cover;
-        background-position: top;
+        background-position: bottom;
 
     }
 
     &-results {
       transform: rotateX(180deg);
-      background-image: linear-gradient(to bottom right,
-      rgba($color-primary-light, 0.5),
-      rgba($color-primary-dark, 0.5)),
-      url('../../img/result-header-1.jpg');
-      background-size: cover;
-      background-position: bottom;
-      clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+      background:  rgba(#778899, 0.2);
 
     }
   }
 
+}
+
+.results {
+  &--header {
+    background-image: linear-gradient(to bottom right,
+    rgba($color-primary-light, 0.5),
+    rgba($color-primary-dark, 0.5)),
+    url('../../img/result-header-1.jpg');
+    background-size: cover;
+    background-position: bottom;
+    max-height: 35rem;
+    height: 35rem;
+    display: grid;
+    align-items: flex-end;
+    box-shadow: 0 0.5rem 1rem rgba($color-black, 0.5)
+  }
+  &_details {
+    display: grid;
+    padding: 3rem;
+    text-align: center;
+    grid-template-columns: repeat(2, 1fr);
+    font-size: 3rem;
+
+    &--description {
+      font-size: 1.2rem;
+      text-transform: uppercase;
+    }
+    & p {
+      display: inline-block;
+    }
+  }
+  &_grid {
+    &--item {
+      margin: 1rem;
+      }
+      &--one {
+        grid-column: 1 / span 2;
+      }
+  }
 }
 
 

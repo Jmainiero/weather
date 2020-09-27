@@ -8,7 +8,7 @@ body {
   color:$color-white;
  
   &__side {
-    @include absCenter;
+    // @include absCenter;
     border-radius: 3px;
   }
 
@@ -50,7 +50,7 @@ body {
     &:visited,
     &:link{
       text-decoration: none;
-      color: $color-white;
+      color: $color-black;
     }
   }
 

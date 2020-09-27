@@ -40,7 +40,12 @@ const fetchData = (zip) => {
     .then(response => response.json())
     .then(data => {
       console.log(data);
-      document.querySelector('.results--cTemp').innerHTML = data.main.temp;
+      document.querySelector('.results--cTemp').innerHTML = `${data.main.temp}&deg`;
       document.querySelector('.results--loc').innerHTML = data.name + ", " + data.sys.country;
+      document.querySelector('.results_details--min').innerHTML = `${data.main.temp_min}&deg`;
+      document.querySelector('.results_details--max').innerHTML = `${data.main.temp_max}&deg`;
+      document.querySelector('.results_details--humid').innerHTML = `${data.main.humidity}&percnt;`;
+      document.querySelector('.results_details--feelsLike').innerHTML = `${data.main.feels_like}&deg`;
+      document.querySelector('.results_grid--one').innerHTML = `<img src='http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png' alt='weather-icon'>`;
     });
 };
