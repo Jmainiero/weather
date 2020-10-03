@@ -163,7 +163,7 @@ body {
     overflow: hidden;
     box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.5); }
     .card__side-default {
-      background-image: linear-gradient(to bottom right, rgba(117, 180, 227, 0.2), rgba(43, 35, 90, 0.5)), url("../../img/default-bg-1.jpg");
+      background-image: linear-gradient(to bottom right, rgba(117, 180, 227, 0.2), rgba(43, 35, 90, 0.5)), url("../img/default-bg-1.jpg");
       background-size: cover;
       background-position: bottom; }
     .card__side-results {
@@ -171,7 +171,7 @@ body {
       background: rgba(119, 136, 153, 0.2); }
 
 .results--header {
-  background-image: linear-gradient(to bottom right, rgba(0, 144, 158, 0.5), rgba(20, 40, 80, 0.5)), url("../../img/result-header-1.jpg");
+  background-image: linear-gradient(to bottom right, rgba(0, 144, 158, 0.5), rgba(20, 40, 80, 0.5)), url("../img/result-header-1.jpg");
   background-size: cover;
   background-position: bottom;
   max-height: 35rem;
