@@ -1,0 +1,105 @@
+.weatherbox-container{
+  background-color: $color-primary;
+  padding: 2rem;
+  width: 80%;
+  margin: 0 auto;
+  box-shadow: 0 1.5rem 4rem rgba($color-black, 0.2);
+
+  &--values {
+    text-align: center;
+    color: $color-white;
+    font-size: 2rem;
+  }
+}
+
+img {
+  width: 25%;
+}
+
+.loading-container {
+  background-color: $color-white;
+  width: 80%;
+  margin-bottom: 1rem !important;
+  margin: 0 auto;
+  position: relative;
+  text-align: center;
+  font-size: 10rem;
+}
+
+.search-location {
+  background-color: $color-white;
+  width: 80%;
+  margin-bottom: 1rem !important;
+  margin: 0 auto;
+  border: 3px solid $color-primary;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transition: 1s all;
+  z-index: 10000;
+
+  &__searched {
+    transform: translate(200px, 25px);
+    left: 0;
+    top: 0;
+
+  }
+
+  & input {
+    width: 90%;
+    padding: 1rem;
+    border: none;
+    font-size: 2rem;
+    &:focus{
+      border: none;
+      outline: none;
+    }
+  }
+  & button {
+    background-color: $color-primary;
+    height: 100%;
+    width: 10% !important;
+    padding: 0.5rem;
+    display: inline-block;
+    position: absolute;
+    border: none;
+    outline: none;
+    transform: translate(0);
+    transition: 0.3s all;
+    
+    &:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba($color-black, 0.1);
+    }
+    &:focus, &:active {
+      transform: translateY(0px);
+    };
+  }
+}
+
+.weatherbox-forecast{
+  width: 80%;
+  margin: 0 auto;
+  position: relative;
+  margin-top: 2rem;
+  color: $color-white;
+
+  &__box {
+    padding: 2rem;
+    width: 25%;
+    background-color: $color-primary;
+    text-align: center;
+    box-shadow: 0 1.5rem 4rem rgba($color-black, 0.2);
+
+    & p {
+      font-size: 1.5rem;
+      margin: 1rem;
+
+    }
+    & h1 {
+      font-size: 2rem;
+      margin: 1rem;
+    }
+  }
+}
