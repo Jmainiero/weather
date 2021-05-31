@@ -17,6 +17,7 @@ ORDER: Base + Typography > general layout + grid > page layout > components
   padding: 0;
   box-sizing: inherit; 
   max-width: 1920px;
+  margin: 0 auto;
 }
 
 html {

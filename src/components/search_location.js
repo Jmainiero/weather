@@ -1,37 +1,28 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import weather_api from './weather_api';
 
-const SearchLocation = (weatherdata) => {
-  const [weather, setWeather] = useState(null);
-  const [loading, setLoading] = useState(true);
+const SearchLocation = ({ setWeather, setLoading }) => {
   const grabData = async (e) => {
     try {
-      await weather_api(e).then((res) => setWeather(res));
-      if (weather !== undefined && weather !== null) {
+      await weather_api(e).then((res) => {
+        setWeather(res);
         setLoading(false);
-        console.log('SET');
-        weatherdata.weatherdata({ loading: loading, data: weather });
-        console.log(weather);
-      }
+      });
     } catch (e) {
       console.error(e);
     }
   };
+  let input = React.createRef();
 
-  const [search, setSearch] = useState(null);
-  let input = React.createRef() || '';
-
-  const handleKeyPress = (e) => {
-    setSearch(input.current.value);
-    if (e.key === 'Enter') {
-      setSearch(input.current.value);
-      if (input.current.value !== null) {
-        grabData({ zipCode: search });
-        document.querySelector('.search-location').className =
-          'search-location search-location__searched';
-      }
+  const handleKeyPress = (event) => {
+    let newInput = event.target.value;
+    if (event.key === 'Enter') {
+      setLoading(true);
+      grabData({ zipCode: newInput });
+      document.querySelector('.search-location').className =
+        'search-location search-location__searched';
     }
   };
 
@@ -40,7 +31,7 @@ const SearchLocation = (weatherdata) => {
       <input
         type='text'
         ref={input}
-        onKeyPress={handleKeyPress}
+        onKeyDown={handleKeyPress}
         placeholder='Press Enter to Search'
       />
       <button>
