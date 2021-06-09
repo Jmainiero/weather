@@ -1,12 +1,34 @@
 import Logo from '../logo.svg';
+import WeatherCodes from './weathermapping';
 const weatherDetails = (weather) => {
-  console.log(weather.weather.weather);
+  const d_map = {
+    0: 'SUN',
+    1: 'MON',
+    2: 'TUES',
+    3: 'WED',
+    4: 'THURS',
+    5: 'FRI',
+    6: 'SAT',
+  };
   return (
     <div className='weatherbox-container--values'>
-      <h1> {weather.weather.weather.name} </h1>{' '}
-      <h2> {weather.weather.weather.main.temp}&deg; </h2>
-      <img src={Logo} alt='logo' />
-      <p className='time-and-date'> Thursday, 4:30 pm </p>
+      <h1> {weather.weather.weather.name} </h1>
+      <div className='weatherbox-container--values__left'>
+        <h2> {Math.floor(weather.weather.weather.main.temp)}&deg; </h2>
+        <p>{WeatherCodes[weather.weather.weather.weather[0].icon].status}</p>
+        <p className='weatherbox-container--values__left__humid'>
+          Humidity <br></br>
+          {Math.floor(weather.weather.weather.main.humidity)}%
+        </p>
+        <p className='weatherbox-container--values__left__feels'>
+          Feels Like <br></br>
+          {Math.floor(weather.weather.weather.main.feels_like)}&deg;
+        </p>
+      </div>
+      {/* <img
+        src={`http://openweathermap.org/img/wn/${weather.weather.weather.weather[0].icon}@4x.png`}
+        alt='logo'
+      /> */}
     </div>
   );
 };

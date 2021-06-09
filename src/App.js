@@ -1,7 +1,7 @@
 import './css/main.scss';
 import Weatherbox from './components/weather_box';
 import SearchLocation from './components/search_location';
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Spinner from 'react-bootstrap/Spinner';
 
@@ -20,15 +20,12 @@ function App() {
               <Spinner animation='border' />
             </div>
           ) : (
-            console.log(loading)
+            console.log()
           )}
-          {console.log('This is loading ', loading)}
-          {console.log(loading !== false && loading !== null)}
-          {console.log('This is weather ', weather)}
           {loading === false && loading !== null ? (
             <Weatherbox weather={weather} />
           ) : (
-            console.log('Runnin gthis')
+            console.log()
           )}
         </div>
       </header>
