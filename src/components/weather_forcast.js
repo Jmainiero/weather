@@ -1,4 +1,3 @@
-import Img from '../css/openweathermap/01d.svg';
 import WeatherCodes from './weathermapping';
 const weatherForecast = (weather) => {
   const d_map = {
@@ -12,11 +11,15 @@ const weatherForecast = (weather) => {
   };
   const r = weather.weather.map((e) => {
     // console.log(`${e.weather[0].icon}`);
+    console.log(WeatherCodes[e.weather[0].icon].icon);
     return (
       <div className='weatherbox-forecast__box'>
         <h1>{d_map[new Date(`${e.dt_txt}`).getDay()]} </h1>
+        <img
+          src={window.location + WeatherCodes[e.weather[0].icon].icon}
+          alt='logo'
+        />
         <h2> {Math.floor(e.main.temp)}&deg; </h2>
-        <img src={Img} alt='logo' />
         <p> {WeatherCodes[e.weather[0].icon].status}</p>
       </div>
     );

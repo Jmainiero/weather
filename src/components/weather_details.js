@@ -25,10 +25,12 @@ const weatherDetails = (weather) => {
           {Math.floor(weather.weather.weather.main.feels_like)}&deg;
         </p>
       </div>
-      {/* <img
-        src={`http://openweathermap.org/img/wn/${weather.weather.weather.weather[0].icon}@4x.png`}
-        alt='logo'
-      /> */}
+      <div className='weatherbox-container--values__right'>
+        <img
+          src={WeatherCodes[weather.weather.weather.weather[0].icon].icon}
+          alt='logo'
+        />
+      </div>
     </div>
   );
 };

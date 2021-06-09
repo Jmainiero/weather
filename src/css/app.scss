@@ -18,8 +18,8 @@ body {
   &--values {
     height: 40vh;
     background-image: linear-gradient(105deg,
-        rgba($color-four-light, .9) 0%,
-        rgba($color-four-light, .3) 80%,
+        rgba($color-four-dark, .9) 0%,
+        rgba($color-four-dark, .3) 80%,
         transparent 100%), url('../css/assets/night_one.png');
     background-position: center;
     background-size: cover;
@@ -34,15 +34,21 @@ body {
     }
 
     &__left {
-      margin: 10rem;
+      margin: 3rem;
       text-align: left;
       font-size: 3rem;
       font-weight: 300;
+      width: 60%;
+      float: left;
 
       & h2 {
         font-size: inherit;
         font-weight: 700;
         font-size: 4rem;
+      }
+
+      & p {
+        margin-top: 2rem;
       }
 
       &__humid {
@@ -61,13 +67,20 @@ body {
       }
     }
 
+    &__right {
+      width: 35%;
+      float: left;
+
+      & img {
+        width: 50%;
+      }
+    }
+
 
   }
 }
 
-img {
-  width: 25%;
-}
+
 
 .loading-container {
   // background-color: $color-white;
@@ -94,6 +107,7 @@ img {
 
   &__searched {
     top: 50px;
+    width: 77%;
 
   }
 
@@ -153,15 +167,25 @@ img {
     margin: 1rem;
     display: inline-block;
 
+    & img {
+      width: 25%;
+    }
+
     & p {
       font-size: 1.5rem;
       margin: 1rem;
+      width: 100%;
 
     }
 
     & h1 {
       font-size: 2rem;
       margin: 1rem;
+      font-weight: 400;
+    }
+
+    & h2 {
+      margin-bottom: 1.5rem;
     }
 
     & img {
