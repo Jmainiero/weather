@@ -32,10 +32,10 @@ const weather_api = async (props) => {
     const r_weatherData = await weatherData(props.zipCode);
     const r_forecastData = await forecastData(props.zipCode);
     const r = Object.assign({}, r_weatherData, r_forecastData);
-    console.log(r);
+    // console.log(r);
     return r;
   } catch (e) {
-    console.log(e);
+    // console.log(e);
     return 'Not Found';
   }
 };
