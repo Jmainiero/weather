@@ -7,8 +7,15 @@ const SearchLocation = ({ setWeather, setLoading }) => {
   const grabData = async (e) => {
     try {
       await weather_api(e).then((res) => {
-        setWeather(res);
-        setLoading(false);
+        console.log(res);
+        if (res === 'Not Found') {
+          alert('Zip Code Not Found. Try Again');
+        } else {
+          document.querySelector('.search-location').className =
+            'search-location search-location__searched';
+          setWeather(res);
+          setLoading(false);
+        }
       });
     } catch (e) {
       console.error(e);
@@ -21,8 +28,6 @@ const SearchLocation = ({ setWeather, setLoading }) => {
     if (event.key === 'Enter') {
       setLoading(true);
       grabData({ zipCode: newInput });
-      document.querySelector('.search-location').className =
-        'search-location search-location__searched';
     }
   };
 

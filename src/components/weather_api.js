@@ -1,13 +1,17 @@
 const axios = require('axios');
 
 const weatherData = async (zipCode) => {
-  const query = await axios
-    .get(
-      `https://api.openweathermap.org/data/2.5/weather?zip=${zipCode}&units=imperial&appid=e07fdcbfcc218eb6cfbdeb7fec313fab
+  try {
+    const query = await axios
+      .get(
+        `https://api.openweathermap.org/data/2.5/weather?zip=${zipCode}&units=imperial&appid=e07fdcbfcc218eb6cfbdeb7fec313fab
   `
-    )
-    .then((res) => res.data);
-  return query;
+      )
+      .then((res) => res.data);
+    return query;
+  } catch (e) {
+    return e;
+  }
 }
 
 const forecastData = async (zipCode) => {
@@ -24,12 +28,16 @@ const forecastData = async (zipCode) => {
 };
 
 const weather_api = async (props) => {
-  const r_weatherData = await weatherData(props.zipCode);
-  const r_forecastData = await forecastData(props.zipCode);
-  const r = Object.assign({}, r_weatherData, r_forecastData);
-  console.log(r);
-  return r;
-
+  try {
+    const r_weatherData = await weatherData(props.zipCode);
+    const r_forecastData = await forecastData(props.zipCode);
+    const r = Object.assign({}, r_weatherData, r_forecastData);
+    console.log(r);
+    return r;
+  } catch (e) {
+    console.log(e);
+    return 'Not Found';
+  }
 };
 
 export default weather_api;

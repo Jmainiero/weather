@@ -10,8 +10,6 @@ const weatherForecast = (weather) => {
     6: 'SAT',
   };
   const r = weather.weather.map((e) => {
-    // console.log(`${e.weather[0].icon}`);
-    console.log(WeatherCodes[e.weather[0].icon].icon);
     return (
       <div className='weatherbox-forecast__box'>
         <h1>{d_map[new Date(`${e.dt_txt}`).getDay()]} </h1>
